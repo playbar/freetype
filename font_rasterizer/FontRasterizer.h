@@ -11,7 +11,7 @@
 #include "BinPacker2D.h"
 #include "BitmapUtils.h"
 
-#pragma comment(lib, "freetype250MT.lib")
+//#pragma comment(lib, "freetype250MT.lib")
 
 struct Rect
 {

@@ -188,7 +188,9 @@ void FontRasterizer::Rasterize()
 
 	std::map<unsigned long, Bitmap>::iterator it;
 	for(it = glyphBitmaps.begin(); it != glyphBitmaps.end(); it++)
-	{packer2D->AddRect(bp2D::BinRect(it->first, it->second.w, it->second.h));}
+	{
+		packer2D->AddRect(bp2D::BinRect(it->first, it->second.w, it->second.h));
+	}
 
 	packer2D->Pack();
 	bp2D::BinRect rootRect = packer2D->GetRootRect(); //bitmap size
