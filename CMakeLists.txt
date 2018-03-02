@@ -451,4 +451,19 @@ if (NOT DEFINED FREETYPE_NO_DIST)
   add_custom_target(dist COMMAND ${CMAKE_MAKE_PROGRAM} package_source)
 endif ()
 
+
+set(SOURCE_PARSESO font_rasterizer/BinPacker2D.cpp
+                    font_rasterizer/BitmapUtils.cpp
+                    font_rasterizer/FontRasterizer.cpp
+                    font_rasterizer/lodepng.cpp
+                    font_rasterizer/main.cpp)
+
+add_executable(font_rasterizer ${SOURCE_PARSESO})
+target_link_libraries(font_rasterizer
+        freetype
+        )
+target_include_directories(font_rasterizer PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/font_rasterizer
+        )
+
 # eof
